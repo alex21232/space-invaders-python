@@ -1,7 +1,4 @@
-# import requerid library
-from ast import Break
-from msilib.schema import Font
-from sre_constants import GROUPREF_EXISTS
+#import requerid library
 import pygame
 import random
 import math
@@ -24,7 +21,7 @@ screen = pygame.display.set_mode( size )
 background = pygame.image.load("space_fondo.png") 
 
 #backgraund music
-mixer.music.load("chavo-del-ocho.wav")
+mixer.music.load("Cire-Link-Instrumental.wav")
 mixer.music.play(-1)
 
 #title
@@ -84,7 +81,7 @@ go_y = 250
 # Game over function
 def game_over( x, y):
     go_text = go_font.render("Game Over", True, (255, 255, 255))
-    screen.blit(go_text, (x, y) )
+    screen.blit(go_text,(x, y) )
 
 # score funtion
 def show_text(x, y):
@@ -168,12 +165,12 @@ while running:
     for item in range( nomber_enemies ):
 
         #game over zone
-        if enemy_y[ item ] > 440:
-            for j in range ( nomber_enemies ):
-                enemy_y[ item ] = 200000
+        if enemy_y[ item ] > 435:
+            for j in range ( nomber_enemies, ):
+                enemy_y[ j ] = 2000
 
             # call game over function
-            game_over( go_x, go_y)
+            game_over( go_x, go_y )
 
             # Break the loop
             break    
@@ -195,7 +192,7 @@ while running:
         if collision:
 
             #explosion sound
-            explosion_sound = mixer.Sound("mega-man-3-megaman.wav")
+            explosion_sound = mixer.Sound("mario-mario-touch-enemy.wav")
             explosion_sound.play()
 
             bullet_y = 480
